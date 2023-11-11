@@ -1,7 +1,7 @@
 package org.mpag.gui;
 
 import javax.swing.*;
-import java.awt.*;
+
 
 public class MenuPanel extends DefaultPanel {
     private final ContentPanel parent;
@@ -20,7 +20,7 @@ public class MenuPanel extends DefaultPanel {
     }
 
     private void initTitle() {
-
+        // TODO: Load graphics
     }
 
     private void initButtons() {
@@ -28,8 +28,8 @@ public class MenuPanel extends DefaultPanel {
         final JButton settings = new JButton("Settings");
         final JButton exit = new JButton("Exit");
 
-//        start.addActionListener(evt -> ); TODO: Start game
-//        settings.addActionListener(evt -> ); TODO: Open settings
+        start.addActionListener(evt -> this.parent.changePanel("game"));
+        settings.addActionListener(evt -> this.parent.changePanel("settings"));
         exit.addActionListener(evt -> System.exit(0));
 
         this.add(start);
